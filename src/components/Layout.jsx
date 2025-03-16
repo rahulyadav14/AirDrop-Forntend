@@ -30,7 +30,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer className="bg-gray-100 border-t">
+      <footer className="bg-gray-100 border-t border-gray-800/30">
         <div className="container mx-auto py-4 px-6 text-center text-gray-600">
           &copy; {new Date().getFullYear()} AirDrop Clone. All rights reserved.
         </div>
