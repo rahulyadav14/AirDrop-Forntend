@@ -51,7 +51,14 @@ class WebRTCService {
       console.log("Connecting to signaling server...");
 
       // For local development
-      const wsUrl = "ws://localhost:8080/ws";
+     let wsUrl;
+     if (process.env.NODE_ENV === "production") {
+       // Production environment - use Render deployed backend
+       wsUrl = "wss://airdrop-clone-backend.onrender.com/ws";
+     } else {
+       // Development environment - use localhost
+       wsUrl = "ws://localhost:8080/ws";
+     }
       console.log(`WebSocket URL: ${wsUrl}`);
 
       this.socket = new WebSocket(wsUrl);
